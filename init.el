@@ -20,7 +20,10 @@
              '("marmalade" . "https://marmalade-repo.org/packages/"))
 (package-initialize)
 (package-refresh-contents)
-(setq package-list '(magit
+(setq package-list '(cider
+		     magit
+		     paredit
+		     rainbow-delimiters
 		     solarized-theme))
 (dolist (package package-list)
   (unless (package-installed-p package)
@@ -35,3 +38,17 @@
 ;;; Magit settings
 ;;;
 (setq magit-last-seen-setup-instructions "1.4.0")
+
+;;;
+;;; Cider settings
+;;;
+(defun remove-dos-eol ()
+  "Do not show ^M in files containing mixed UNIX and DOS line endings."
+  (interactive)
+  (setq buffer-display-table (make-display-table))
+  (aset buffer-display-table ?\^M []))
+
+(add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
+
+(add-hook 'cider-repl-mode-hook 'rainbow-delimiters-mode)
+(add-hook 'cider-repl-mode-hook 'remove-dos-eol)
