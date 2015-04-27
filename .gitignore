@@ -1,0 +1,9 @@
+#
+# Exclude directories and files which are created at runtime.
+#
+
+auto-save-list/
+server/
+\#*
+.#*
+*~
