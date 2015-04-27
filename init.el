@@ -20,7 +20,8 @@
              '("marmalade" . "https://marmalade-repo.org/packages/"))
 (package-initialize)
 (package-refresh-contents)
-(setq package-list '(solarized-theme))
+(setq package-list '(magit
+		     solarized-theme))
 (dolist (package package-list)
   (unless (package-installed-p package)
     (package-install package)))
@@ -29,3 +30,8 @@
 ;;; Theme settings
 ;;;
 (load-theme 'solarized-dark t)
+
+;;;
+;;; Magit settings
+;;;
+(setq magit-last-seen-setup-instructions "1.4.0")
