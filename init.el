@@ -18,8 +18,8 @@
 (require 'package)
 (add-to-list 'package-archives
              '("marmalade" . "https://marmalade-repo.org/packages/"))
-
 (package-initialize)
+(package-refresh-contents)
 (setq package-list '(solarized-theme))
 (dolist (package package-list)
   (unless (package-installed-p package)
