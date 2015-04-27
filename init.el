@@ -17,4 +17,14 @@
 (require 'package)
 (add-to-list 'package-archives
              '("marmalade" . "https://marmalade-repo.org/packages/"))
+
 (package-initialize)
+(setq package-list '(solarized-theme))
+(dolist (package package-list)
+  (unless (package-installed-p package)
+    (package-install package)))
+
+;;;
+;;; Theme settings
+;;;
+(load-theme 'solarized-dark t)
