@@ -11,3 +11,10 @@
 ;;
 (server-start)
 
+;;
+;; Package management and auto-installation
+;;
+(require 'package)
+(add-to-list 'package-archives
+             '("marmalade" . "https://marmalade-repo.org/packages/"))
+(package-initialize)
