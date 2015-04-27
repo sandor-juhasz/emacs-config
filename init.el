@@ -10,6 +10,7 @@
 ;; toolchain
 ;;
 (server-start)
+(setq inhibit-startup-message t) 
 
 ;;
 ;; Package management and auto-installation
