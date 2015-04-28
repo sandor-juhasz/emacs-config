@@ -49,6 +49,8 @@
   (aset buffer-display-table ?\^M []))
 
 (add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
+(add-hook 'clojure-mode-hook 'paredit-mode)
 
 (add-hook 'cider-repl-mode-hook 'rainbow-delimiters-mode)
 (add-hook 'cider-repl-mode-hook 'remove-dos-eol)
+(add-hook 'cider-repl-mode-hook 'paredit-mode)
