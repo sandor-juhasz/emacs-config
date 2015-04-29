@@ -11,6 +11,7 @@
 ;;
 (server-start)
 (setq inhibit-startup-message t) 
+(setq ring-bell-function 'ignore)
 
 ;;
 ;; Package management and auto-installation
@@ -57,3 +58,5 @@
 (add-hook 'cider-repl-mode-hook 'rainbow-delimiters-mode)
 (add-hook 'cider-repl-mode-hook 'remove-dos-eol)
 (add-hook 'cider-repl-mode-hook 'paredit-mode)
+
+(setq cider-prompt-save-file-on-load   nil) ; Does not prompt for buffer save when loading file with C-c C-k
