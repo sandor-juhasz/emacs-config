@@ -60,3 +60,8 @@
 (add-hook 'cider-repl-mode-hook 'paredit-mode)
 
 (setq cider-prompt-save-file-on-load   nil) ; Does not prompt for buffer save when loading file with C-c C-k
+
+;;;
+;;; Org-mode settings
+;;;
+(global-set-key "\C-ca" 'org-agenda)
