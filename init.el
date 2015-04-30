@@ -1,8 +1,25 @@
 ;;;
 ;;; Sandor Juhasz' init.el
 ;;;
+;;; (C) 2015 Sandor Juhasz
+;;;
 ;;; These are my Emacs settings I use for Clojure development and
-;;; various other tasks using Emacs.
+;;; various other tasks using Emacs. With this config my Emacs
+;;; installation is set up as a single editor running in server
+;;; mode.
+;;;
+;;; Personally I use emacs to
+;;;    - Develop clojure projects
+;;;    - Author documentation and blog posts in Org mode.
+;;;
+;;; To fully take advantage of this configuration, please install the
+;;; following external applications too.
+;;;    - Java SE 8
+;;;    - wget
+;;;    - leiningen
+;;;    - git
+;;; Please see the setup.org file for step-by-step installation steps
+;;; of these external tools.
 ;;;
 
 ;;

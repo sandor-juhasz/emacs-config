@@ -1,0 +1,28 @@
+* Setting up Emacs
+2015 Sandor Juhasz
+
+** Overview
+This document describes the step-by-step process of setting up a new
+installation of emacs and other external tools to get a fully
+functional Clojure and note taking environment.
+
+** Installation
+
+*** Java SE 8
+*** wget
+*** leiningen
+*** git
+*** installing the init.el
+
+** Configuration and usage
+
+*** Clojure development with Cider
+
+**** Modes, plugins I use
+- Paredit
+- Rainbow delimiters
+- clojure mode, cider
+- magit
+
+*** Authoring text in org mode
+
