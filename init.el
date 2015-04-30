@@ -49,6 +49,11 @@
     (package-install package)))
 
 ;;;
+;;; Ido mode settings
+;;;
+(ido-mode t)
+
+;;;
 ;;; Theme settings
 ;;;
 (load-theme 'solarized-dark t)
