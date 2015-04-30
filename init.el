@@ -42,6 +42,13 @@
 (setq magit-last-seen-setup-instructions "1.4.0")
 
 ;;;
+;;; Emacs lisp mode settings
+;;;
+(add-hook 'emacs-lisp-mode-hook 'rainbow-delimiters-mode)
+(add-hook 'emacs-lisp-mode-hook 'paredit-mode)
+(add-hook 'emacs-lisp-mode-hook 'company-mode)
+
+;;;
 ;;; Cider settings
 ;;;
 (defun remove-dos-eol ()
