@@ -29,6 +29,7 @@
 (server-start)
 (setq inhibit-startup-message t) 
 (setq ring-bell-function 'ignore)
+(fset 'yes-or-no-p 'y-or-n-p)
 
 ;;
 ;; Package management and auto-installation
