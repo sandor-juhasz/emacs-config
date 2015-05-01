@@ -8,3 +8,5 @@ elpa/
 \#*
 .#*
 *~
+projectile.cache
+projectile-bookmarks.eld

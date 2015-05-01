@@ -45,6 +45,7 @@
 		     flx-ido
 		     magit
 		     paredit
+		     projectile
 		     rainbow-delimiters
 		     solarized-theme))
 (dolist (package package-list)
@@ -61,6 +62,11 @@
 ;; disable ido faces to see flx highlights.
 (setq ido-enable-flex-matching t)
 (setq ido-use-faces nil)
+
+;;;
+;;; Projectile
+;;;
+(projectile-global-mode)
 
 ;;;
 ;;; Theme settings
