@@ -8,7 +8,7 @@
 ;;; installation is set up as a single editor running in server
 ;;; mode.
 ;;;
-;;; Personally I use emacs to
+;;; Personally I use emacs to1
 ;;;    - Develop clojure projects
 ;;;    - Author documentation and blog posts in Org mode.
 ;;;
@@ -30,13 +30,16 @@
 (setq inhibit-startup-message t) 
 (setq ring-bell-function 'ignore)
 (fset 'yes-or-no-p 'y-or-n-p)
+(prefer-coding-system 'utf-8) ; This is required to get rid of encoding issues
+                              ; encountered during package management.
 
 ;;
 ;; Package management and auto-installation
 ;;
 (require 'package)
-(add-to-list 'package-archives
-             '("marmalade" . "https://marmalade-repo.org/packages/"))
+(add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages/"))
+(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
+
 (package-initialize)
 (package-refresh-contents)
 (setq package-list '(cider
