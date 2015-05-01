@@ -62,6 +62,11 @@
 ;; disable ido faces to see flx highlights.
 (setq ido-enable-flex-matching t)
 (setq ido-use-faces nil)
+;; Other options include
+;; - Not asking for conformation when creating a new buffer
+;; - Specifying extension ordering for ido
+;; - Ignoring files
+
 
 ;;;
 ;;; Projectile
