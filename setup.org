@@ -11,6 +11,21 @@ functional Clojure and note taking environment.
 *** Java SE 8
 *** wget
 *** leiningen
+Cider requires the `cider-nrepl` plugin and the most recent nrepl.
+To add this to your configuration, edit your ~/.lein/profiles.clj file.
+My version looks like this:
+
+{:user {:plugins [[cider/cider-nrepl "0.9.0-SNAPSHOT"]
+                  [lein-pprint "1.1.2"]]
+        :dependencies [[org.clojure/tools.nrepl "0.2.10"]]}}
+
+As of May 1st 2015, with Leiningen 2.5.1 it is a known issue that if you start 
+cider-jack-in from outside a project, the repl will use the default 0.2.6
+tools.nrepl dependency, no matter what you set in the profiles.clj.
+This will lead to a warning when you start a repl from Emacs. To use the
+most recent version of the nrepl, please invoke cider-jack-in after you
+opened a Clojure project file.
+
 *** git
 *** installing the init.el
 
