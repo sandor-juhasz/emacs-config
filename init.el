@@ -118,3 +118,6 @@
 ;;; Org-mode settings
 ;;;
 (global-set-key "\C-ca" 'org-agenda)
+(setq org-agenda-files (list "~/org/opensource.org"
+			     "~/org/network.org"))
+(setq org-log-done 'time)  ; When enabled, closing a TODO will insert a CLOSED timestamp.
