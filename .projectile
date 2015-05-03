@@ -1,7 +1,7 @@
--\.git
--\auto-save-list
--\elpa
--\server
+-/.git
+-/auto-save-list
+-/elpa
+-/server
 -projectile.cache
 -projectile-bookmarks.eld
 -*.*~
