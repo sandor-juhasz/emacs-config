@@ -8,6 +8,16 @@ functional Clojure and note taking environment.
 
 ** Installation
 
+*** Total Commander
+Use the following command as an external editor to use Emacs when you
+edit files in Total Commander. Please Use the quotation marks,
+otherwise your files will open in Emacs with their old 8.3 DOS
+filenames.
+
+#+BEGIN_EXAMPLE
+"c:\Dev\Apps\emacs-24.4\bin\emacsclientw.exe"  -na "C:\Dev\Apps\emacs-24.4\bin\runemacs.exe"
+#+END_EXAMPLE
+
 *** Java SE 8
 *** wget
 *** leiningen
