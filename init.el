@@ -54,6 +54,7 @@
 		     flx-ido
 		     magit
 		     paredit
+		     powerline
 		     projectile
 		     rainbow-delimiters
 		     solarized-theme))
@@ -134,3 +135,9 @@
 			     "~/org/network.org"))
 (setq org-log-done 'time)  ; When enabled, closing a TODO will insert a CLOSED timestamp.
 
+;;;
+;;; Powerline (milkypostman version) from MELPA
+;;; Homepage: https://github.com/milkypostman/powerline
+;;;
+(require 'powerline)
+(powerline-default-theme)
