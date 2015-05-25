@@ -134,6 +134,7 @@
 (setq org-agenda-files (list "~/org/opensource.org"
 			     "~/org/network.org"))
 (setq org-log-done 'time)  ; When enabled, closing a TODO will insert a CLOSED timestamp.
+(add-hook 'org-mode-hook 'turn-on-auto-fill)
 
 ;;;
 ;;; Powerline (milkypostman version) from MELPA
