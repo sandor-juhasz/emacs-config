@@ -141,3 +141,8 @@
 ;;;
 (require 'powerline)
 (powerline-default-theme)
+
+;;;
+;;; Clean mode line support
+;;; https://www.masteringemacs.org/article/hiding-replacing-modeline-strings
+;;;
