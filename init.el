@@ -135,6 +135,20 @@
 			     "~/org/network.org"))
 (setq org-log-done 'time)  ; When enabled, closing a TODO will insert a CLOSED timestamp.
 (add-hook 'org-mode-hook 'turn-on-auto-fill)
+(add-hook 'org-mode-hook 'flyspell-mode)
+
+;;;
+;;; Spell checker settings
+;;;
+(setq ispell-program-name (executable-find "hunspell")
+      ispell-local-dictionary "en_US"
+      ispell-skip-html t
+      ispell-local-dictionary-alist
+      '((nil "\[\[:alpha:\]\]" "[^[:alpha:]]" "[']" t ("-d" "en_US") nil utf-8)
+	("american" "\[\[:alpha:\]\]" "[^[:alpha:]]" "[']" t ("-d" "en_US") nil utf-8)
+	("en_US" "\[\[:alpha:\]\]" "[^[:alpha:]]" "[']" t ("-d" "en_US") nil utf-8)))
+(setq ispell-dictionary "en_US")
+(require 'ispell)
 
 ;;;
 ;;; Powerline (milkypostman version) from MELPA

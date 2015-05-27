@@ -37,6 +37,23 @@ most recent version of the nrepl, please invoke cider-jack-in after you
 opened a Clojure project file.
 
 *** git
+*** hunspell
+Download the windows version of hunspell from
+http://sourceforge.net/projects/ezwinports/files/hunspell-1.3.2-3-w32-bin.zip/download
+and extract it under the gnuwin32 directory. For me this is
+c:\dev\apps\gnuwin32. Test the hunspell installation by invoking
+hunspell -D. This command should list all the dictionaries installed
+on your system.
+
+Open the global environment variable dialog and set the LANG variable
+to en_US. 
+
+When invoking ispell from Emacs, you may get the following error:
+"ispell-phaf: No matching entry for nil". This may be caused by a
+wrong default value of the LANG variable. For me Emacs set it to HUN
+which was something huspell could not interpret.
+
+
 *** installing the init.el
 
 ** Configuration and usage
