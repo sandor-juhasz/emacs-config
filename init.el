@@ -26,6 +26,8 @@
 ;; General emacs settings to integrate the tool into my Windows
 ;; toolchain
 ;;
+(add-to-list 'load-path "~/.emacs.d/lisp/org/")
+
 (server-start)
 (setq inhibit-startup-message t) 
 (setq ring-bell-function 'ignore)
@@ -131,10 +133,6 @@
 ;;; Org-mode settings
 ;;;
 
-(defface org-block-background
-  '((t (:background "#000000")))
-  "Face used for the source block background.")
-
 (global-set-key "\C-ca" 'org-agenda)
 (setq org-agenda-files (list "~/org/opensource.org"
 			     "~/org/network.org"))
@@ -151,6 +149,7 @@
  '((emacs-lisp . t)
    (sh . t)
    (clojure . t)))
+(setq org-babel-clojure-backend 'cider)
 
 ;;;
 ;;; Spell checker settings
