@@ -130,12 +130,27 @@
 ;;;
 ;;; Org-mode settings
 ;;;
+
+(defface org-block-background
+  '((t (:background "#000000")))
+  "Face used for the source block background.")
+
 (global-set-key "\C-ca" 'org-agenda)
 (setq org-agenda-files (list "~/org/opensource.org"
 			     "~/org/network.org"))
 (setq org-log-done 'time)  ; When enabled, closing a TODO will insert a CLOSED timestamp.
 (add-hook 'org-mode-hook 'turn-on-auto-fill)
 (add-hook 'org-mode-hook 'flyspell-mode)
+(setq org-babel-sh-command "bash")
+(setq org-edit-src-content-indentation 0
+      org-src-tab-acts-natively t
+      org-src-fontify-natively t
+      org-confirm-babel-evaluate nil)
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((emacs-lisp . t)
+   (sh . t)
+   (clojure . t)))
 
 ;;;
 ;;; Spell checker settings
