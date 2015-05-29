@@ -53,6 +53,13 @@ When invoking ispell from Emacs, you may get the following error:
 wrong default value of the LANG variable. For me Emacs set it to HUN
 which was something huspell could not interpret.
 
+*** org mode
+The configuration requires at least the beta version 8.3 of the org
+mode to enable Clojure Cider support. If your Emacs comes with an
+earlier version of org mode, please download the latest source code
+distribution of org, compile it and copy it under ~/.emacs.d/lisp/org.
+
+To verify your org version, please check C-h v org-version.
 
 *** installing the init.el
 
