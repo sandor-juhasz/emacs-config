@@ -133,11 +133,16 @@
 ;;;
 ;;; Org-mode settings
 ;;;
+
+;; The following lines are used to auto-refresh generated images in an org file
+(defun shk-fix-inline-images ()
+  (when org-inline-image-overlays
+    (org-redisplay-inline-images)))
+
 (global-set-key "\C-ca" 'org-agenda)
-(setq org-agenda-files (list "~/org/opensource.org"
-			     "~/org/network.org"))
 (add-hook 'org-mode-hook 'turn-on-auto-fill)
 (add-hook 'org-mode-hook 'flyspell-mode)
+(add-hook 'org-babel-after-execute-hook 'shk-fix-inline-images)
 (setq org-edit-src-content-indentation 0
       org-src-tab-acts-natively t
       org-src-fontify-natively t
@@ -145,7 +150,9 @@
       org-confirm-babel-evaluate nil
       org-plantuml-jar-path "c:/Dev/Tools/PlantUML/plantuml.jar"
       org-babel-clojure-backend 'cider
-      org-babel-sh-command "bash")
+      org-babel-sh-command "bash"
+      org-agenda-files (list "~/org/opensource.org"
+			     "~/org/network.org"))
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((emacs-lisp . t)
@@ -154,13 +161,6 @@
    (plantuml . t)
    (dot . t)))
 
-;; The following lines are used to auto-refresh generated images in an org file
-(defun shk-fix-inline-images ()
-  (when org-inline-image-overlays
-    (org-redisplay-inline-images)))
-
-(after-loading 'org
-	       (add-hook 'org-babel-after-execute-hook 'shk-fix-inline-images))
 
 
 ;;;
