@@ -61,6 +61,90 @@ distribution of org, compile it and copy it under ~/.emacs.d/lisp/org.
 
 To verify your org version, please check C-h v org-version.
 
+*** Dot and PlantUML
+Download the most recent version of Graphviz and install it somewhere
+on your machine. Add the /bin folder to your PATH. Please test that
+the ~dot~ executable is available from anywhere in the command line.
+
+Download the most recent PlantUML distribution which is a Java jar
+file. You can test your runtime settings by calling ~java -jar
+plantuml.jar -help~ to see if the application can be run
+successfully. 
+
+Create the ~GRAPHVIZ_DOT~ environment variable and set the fully
+qualified path to your  ~dot.exe~. Test that the PlantUML can see dot
+by executing ~java -jar plantuml.jar -testdot~.
+
+Image support requires DLLs on Windows which are not distributed with
+the Emacs build (as of 24.4). Installation instructions can be found
+at the main Emacs Windows site at
+https://ftp.gnu.org/gnu/emacs/windows/. First you need to test if your
+Emacs already has PNG and JPEG support. These are the formats which
+are produced by PlantUML. Issue the following commands by pressing
+~C-x C-e~. If they return nil, you do not have support for that file
+type and you need to download the DLL.
+
+#+BEGIN_SRC emacs-lisp
+(image-type-available-p 'jpeg)
+(image-type-available-p 'png)
+#+END_SRC
+
+To see what version of the DLLs your Emacs needs, evaluate the
+#+BEGIN_SRC emacs-lisp
+image-library-alist
+#+END_SRC
+
+#+RESULTS:
+| xpm        | libxpm.dll              | xpm4.dll         | libXpm-nox4.dll |
+| png        | libpng16.dll            | libpng16-16.dll  |                 |
+| tiff       | libtiff-5.dll           | libtiff3.dll     | libtiff.dll     |
+| jpeg       | libjpeg-9.dll           |                  |                 |
+| gif        | libgif-7.dll            |                  |                 |
+| svg        | librsvg-2-2.dll         |                  |                 |
+| gdk-pixbuf | libgdk_pixbuf-2.0-0.dll |                  |                 |
+| glib       | libglib-2.0-0.dll       |                  |                 |
+| gobject    | libgobject-2.0-0.dll    |                  |                 |
+| gnutls     | libgnutls-28.dll        | libgnutls-26.dll |                 |
+| libxml2    | libxml2-2.dll           | libxml2.dll      |                 |
+| zlib       | zlib1.dll               | libz-1.dll       |                 |
+
+LibPNG 1.6.2 can be found at
+http://sourceforge.net/projects/ezwinports/files/libpng-1.6.12-w32-bin.zip/download
+
+LibJPEG 9 can be downloaded from
+http://sourceforge.net/projects/ezwinports/files/jpeg-v9a-w32-bin.zip/download
+
+Extract the DLLs from the downloaded archives and copy them int your
+<EMACS_INSTALL_DIR>/bin directory. Please restart your Emacs and check
+the relevant ~image-type-available-p~ predicates for availability.
+
+Test your PlantUML and dot setup by executing the following
+scripts. You can use C-c C-x C-v to inline the images.
+
+#+BEGIN_SRC plantuml :file hello.png
+class HelloWorld
+#+END_SRC
+
+#+RESULTS:
+[[file:hello.png]]
+
+#+BEGIN_SRC dot :file graph.png
+graph { 
+		a -- b; 
+		b -- c; 
+		a -- c; 
+		d -- c; 
+		e -- c; 
+		e -- a; 
+	} 
+#+END_SRC
+
+#+RESULTS:
+[[file:graph.png]]
+
+For syntax highlighting use the plantuml-mode from MELPA.
+***** TODO: troubleshoot the plantuml-mode. It starts with an error message.
+
 *** installing the init.el
 
 ** Configuration and usage
