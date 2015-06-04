@@ -37,6 +37,15 @@ most recent version of the nrepl, please invoke cider-jack-in after you
 opened a Clojure project file.
 
 *** git
+My preferred Git plugin is ~magit~. I have bound the Magit status
+screen to ~C-c m m~ as it is a frequently used command and it does not
+have a shortcut by default.
+
+Emacs cannot access the git's built in username / password prompt on
+Windows so you need to set up SSH authentication. See
+https://help.github.com/articles/generating-ssh-keys/ for details
+
+
 *** hunspell
 Download the windows version of hunspell from
 http://sourceforge.net/projects/ezwinports/files/hunspell-1.3.2-3-w32-bin.zip/download
