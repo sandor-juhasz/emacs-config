@@ -187,3 +187,8 @@
 ;;; Clean mode line support
 ;;; https://www.masteringemacs.org/article/hiding-replacing-modeline-strings
 ;;;
+
+;;;
+;;; Plantuml-mode settings
+;;;
+(setq plantuml-jar-path "c:/Dev/Tools/PlantUML/plantuml.jar")

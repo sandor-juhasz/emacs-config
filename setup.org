@@ -45,6 +45,7 @@ Emacs cannot access the git's built in username / password prompt on
 Windows so you need to set up SSH authentication. See
 https://help.github.com/articles/generating-ssh-keys/ for details
 
+Emacs still cannot seem to see my ssh installation.
 
 *** hunspell
 Download the windows version of hunspell from
@@ -152,6 +153,11 @@ graph {
 [[file:graph.png]]
 
 For syntax highlighting use the plantuml-mode from MELPA.
+To enable plantuml-mode, please specify the plantuml-jar-path variable
+in your ~init.el~. Otherwise when activating the plantum-mode, the
+initialization code will report a cryptic error message: "Wront type
+argument: stringp, nil"
+
 ***** TODO: troubleshoot the plantuml-mode. It starts with an error message.
 
 *** installing the init.el
