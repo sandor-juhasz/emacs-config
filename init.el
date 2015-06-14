@@ -134,6 +134,9 @@
 ;;; Org-mode settings
 ;;;
 
+(require 'ox-reveal)
+(setq org-reveal-root "file:///c:/Dev/Tools/revealjs")
+
 ;; The following lines are used to auto-refresh generated images in an org file
 (defun shk-fix-inline-images ()
   (when org-inline-image-overlays
@@ -192,3 +195,4 @@
 ;;; Plantuml-mode settings
 ;;;
 (setq plantuml-jar-path "c:/Dev/Tools/PlantUML/plantuml.jar")
+
