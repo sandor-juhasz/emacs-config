@@ -86,11 +86,6 @@
 ;;;
 (require 'projectile)
 (projectile-global-mode)
-;; Workaround to ignore files listed in .projectile under Windows.
-(defun projectile-ignored-directory-p (directory)
-  "Check if DIRECTORY should be ignored."
-  (let ((canonic-directory-name (file-name-as-directory directory)))
-    (member canonic-directory-name (projectile-ignored-directories))))
 
 ;;
 ;;; Theme settings
