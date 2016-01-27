@@ -5,6 +5,7 @@
 auto-save-list/
 server/
 elpa/
+lisp/org
 \#*
 .#*
 *~

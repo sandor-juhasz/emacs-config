@@ -61,7 +61,8 @@
 		     powerline
 		     projectile
 		     rainbow-delimiters
-		     solarized-theme))
+		     solarized-theme
+		     yasnippet))
 (dolist (package package-list)
   (unless (package-installed-p package)
     (package-install package)))
@@ -191,3 +192,8 @@
 ;;; Plantuml-mode settings
 ;;;
 (setq plantuml-jar-path "c:/Dev/Tools/PlantUML/plantuml.jar")
+
+;;;
+;;; Yasnippet settings
+;;;
+(yas-global-mode 1)
