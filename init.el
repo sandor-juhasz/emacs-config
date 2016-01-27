@@ -26,6 +26,7 @@
 ;; General emacs settings to integrate the tool into my Windows
 ;; toolchain
 ;;
+(add-to-list 'load-path "~/.emacs.d/lisp/sanyi")
 (add-to-list 'load-path "~/.emacs.d/lisp/org/")
 
 (server-start)
@@ -190,4 +191,3 @@
 ;;; Plantuml-mode settings
 ;;;
 (setq plantuml-jar-path "c:/Dev/Tools/PlantUML/plantuml.jar")
-
