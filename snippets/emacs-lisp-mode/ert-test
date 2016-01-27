@@ -1,0 +1,8 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: ERT test case
+# key: test
+# binding: direct-keybinding
+# --
+(ert-deftest ${1:test-name} ()
+  "${2:Description}"
+  (should (equal ${3:1} ${4:1})))

@@ -1,0 +1,8 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: Emacs lisp function
+# key: fn
+# binding: direct-keybinding
+# --
+(defun `(file-name-sans-extension (file-name-nondirectory buffer-file-name))`-${1:function-name} (${2:args})
+   "${3:Function documentation}"
+   $0)
