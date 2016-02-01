@@ -63,7 +63,9 @@
 		     rainbow-delimiters
 		     solarized-theme
 		     yasnippet
-		     elisp-slime-nav))
+		     elisp-slime-nav
+		     idomenu
+		     imenu-anywhere))
 (dolist (package package-list)
   (unless (package-installed-p package)
     (package-install package)))
@@ -83,6 +85,11 @@
 ;; - Specifying extension ordering for ido
 ;; - Ignoring files
 
+;;;
+;;; imenu settings
+;;;
+(global-set-key (kbd "C-c i") 'idomenu)
+(global-set-key (kbd "C-c C-i") 'imenu-anywhere)
 
 ;;;
 ;;; Projectile
