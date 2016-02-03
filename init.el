@@ -219,13 +219,18 @@
 ;;;
 ;;; Other key mappings and functions
 ;;;
-(global-set-key (kbd "C-c s e") #'base64-encode-region)
-(global-set-key (kbd "C-c s d") #'base64-decode-region)
-
 (defun reformat-xml ()
   "Reformats the XML file in the buffer using "
   (interactive)
   (mark-whole-buffer)
   (shell-command-on-region (point-min) (point-max) "xml format" t t))
 
-(global-set-key (kbd "C-c s x") #'reformat-xml)
+(defvar sandors-keymap
+  (let ((map (make-sparse-keymap)))
+    (define-key map (kbd "e") #'base64-encode-region)
+    (define-key map (kbd "d") #'base64-decode-region)
+    (define-key map (kbd "x") #'reformat-xml)
+    map))
+
+(global-set-key (kbd "C-c s") sandors-keymap)
+
