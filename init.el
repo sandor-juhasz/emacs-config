@@ -217,8 +217,15 @@
 (yas-global-mode 1)
 
 ;;;
-;;; Other key mappings
+;;; Other key mappings and functions
 ;;;
-(global-set-key (kbd "C-c s e") 'base64-encode-region)
-(global-set-key (kbd "C-c s d") 'base64-decode-region)
+(global-set-key (kbd "C-c s e") #'base64-encode-region)
+(global-set-key (kbd "C-c s d") #'base64-decode-region)
 
+(defun reformat-xml ()
+  "Reformats the XML file in the buffer using "
+  (interactive)
+  (mark-whole-buffer)
+  (shell-command-on-region (point-min) (point-max) "xml format" t t))
+
+(global-set-key (kbd "C-c s x") #'reformat-xml)
