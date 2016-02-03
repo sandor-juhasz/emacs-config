@@ -215,3 +215,10 @@
 ;;; Yasnippet settings
 ;;;
 (yas-global-mode 1)
+
+;;;
+;;; Other key mappings
+;;;
+(global-set-key (kbd "C-c s e") 'base64-encode-region)
+(global-set-key (kbd "C-c s d") 'base64-decode-region)
+
