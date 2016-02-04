@@ -61,7 +61,6 @@
 		     plantuml-mode
 		     projectile
 		     rainbow-delimiters
-		     solarized-theme
 		     elisp-slime-nav
 		     idomenu
 		     imenu-anywhere
@@ -96,11 +95,6 @@
 ;;;
 (require 'projectile)
 (projectile-global-mode)
-
-;;
-;;; Theme settings
-;;;
-(load-theme 'solarized-dark t)
 
 ;;;
 ;;; Magit settings
@@ -208,6 +202,11 @@
   :ensure t
   :config
   (powerline-default-theme))
+
+(use-package solarized-theme
+  :ensure t
+  :config
+  (load-theme 'solarized-dark t))
 
 (use-package yasnippet
   :ensure t
