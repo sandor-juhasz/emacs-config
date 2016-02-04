@@ -59,11 +59,9 @@
 		     magit
 		     paredit
 		     plantuml-mode
-		     powerline
 		     projectile
 		     rainbow-delimiters
 		     solarized-theme
-		     yasnippet
 		     elisp-slime-nav
 		     idomenu
 		     imenu-anywhere
@@ -207,10 +205,12 @@
 (require 'use-package)
 
 (use-package powerline ; Powerline (milkypostman version) from MELPA
+  :ensure t
   :config
   (powerline-default-theme))
 
 (use-package yasnippet
+  :ensure t
   :config
   (yas-global-mode 1))
 
