@@ -26,6 +26,7 @@
 ;; General emacs settings to integrate the tool into my Windows
 ;; toolchain
 ;;
+
 (add-to-list 'load-path "~/.emacs.d/lisp/sanyi")
 (add-to-list 'load-path "~/.emacs.d/lisp/org/")
 
@@ -65,7 +66,8 @@
 		     yasnippet
 		     elisp-slime-nav
 		     idomenu
-		     imenu-anywhere))
+		     imenu-anywhere
+		     use-package))
 (dolist (package package-list)
   (unless (package-installed-p package)
     (package-install package)))
@@ -194,27 +196,23 @@
 (setq ispell-dictionary "en_US")
 (require 'ispell)
 
-;;;
-;;; Powerline (milkypostman version) from MELPA
-;;; Homepage: https://github.com/milkypostman/powerline
-;;;
-(require 'powerline)
-(powerline-default-theme)
 
-;;;
-;;; Clean mode line support
-;;; https://www.masteringemacs.org/article/hiding-replacing-modeline-strings
-;;;
+
 
 ;;;
 ;;; Plantuml-mode settings
 ;;;
 (setq plantuml-jar-path "c:/Dev/Tools/PlantUML/plantuml.jar")
 
-;;;
-;;; Yasnippet settings
-;;;
-(yas-global-mode 1)
+(require 'use-package)
+
+(use-package powerline ; Powerline (milkypostman version) from MELPA
+  :config
+  (powerline-default-theme))
+
+(use-package yasnippet
+  :config
+  (yas-global-mode 1))
 
 ;;;
 ;;; Other key mappings and functions
