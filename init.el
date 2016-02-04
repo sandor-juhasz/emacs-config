@@ -59,7 +59,6 @@
 		     magit
 		     paredit
 		     plantuml-mode
-		     projectile
 		     rainbow-delimiters
 		     elisp-slime-nav
 		     idomenu
@@ -89,12 +88,6 @@
 ;;;
 (global-set-key (kbd "C-c i") 'idomenu)
 (global-set-key (kbd "C-c C-i") 'imenu-anywhere)
-
-;;;
-;;; Projectile
-;;;
-(require 'projectile)
-(projectile-global-mode)
 
 ;;;
 ;;; Magit settings
@@ -202,6 +195,11 @@
   :ensure t
   :config
   (powerline-default-theme))
+
+(use-package projectile
+  :ensure t
+  :config
+  (projectile-global-mode))
 
 (use-package solarized-theme
   :ensure t
