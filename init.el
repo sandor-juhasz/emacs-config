@@ -56,7 +56,6 @@
 		     company
 		     flx
 		     flx-ido
-		     magit
 		     paredit
 		     plantuml-mode
 		     rainbow-delimiters
@@ -88,12 +87,6 @@
 ;;;
 (global-set-key (kbd "C-c i") 'idomenu)
 (global-set-key (kbd "C-c C-i") 'imenu-anywhere)
-
-;;;
-;;; Magit settings
-;;;
-(setq magit-last-seen-setup-instructions "1.4.0")
-(global-set-key (kbd "C-c m m") 'magit-status) 
 
 ;;;
 ;;; Emacs lisp mode settings
@@ -190,6 +183,10 @@
 (setq plantuml-jar-path "c:/Dev/Tools/PlantUML/plantuml.jar")
 
 (require 'use-package)
+
+(use-package magit
+  :ensure t
+  :bind ("C-c m m" . magit-status))
 
 (use-package powerline ; Powerline (milkypostman version) from MELPA
   :ensure t
