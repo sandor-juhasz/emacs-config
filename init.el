@@ -203,6 +203,14 @@
   :config
   (load-theme 'solarized-dark t))
 
+(use-package yaml-mode
+  :ensure t
+  :config
+   (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
+   (add-hook 'yaml-mode-hook  ;; To ensure auto-indentation when pressing ENTER
+    '(lambda ()
+       (define-key yaml-mode-map "\C-m" 'newline-and-indent))))
+
 (use-package yasnippet
   :ensure t
   :config
