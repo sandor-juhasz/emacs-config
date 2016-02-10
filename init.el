@@ -186,7 +186,8 @@
 
 (use-package magit
   :ensure t
-  :bind ("C-c m m" . magit-status))
+  :bind ("C-c m m" . magit-status)
+  :config (setenv "GIT_ASKPASS" "git-gui--askpass"))
 
 (use-package powerline ; Powerline (milkypostman version) from MELPA
   :ensure t
