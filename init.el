@@ -91,10 +91,15 @@
 ;;;
 ;;; Emacs lisp mode settings
 ;;;
+
+(defun init-emacs-lisp-mode ()
+  "Sets up my customizations for the emacs lisp major mode."
+  (local-set-key (kbd "C-c C-k") 'eval-buffer))
 (add-hook 'emacs-lisp-mode-hook 'rainbow-delimiters-mode)
 (add-hook 'emacs-lisp-mode-hook 'paredit-mode)
 (add-hook 'emacs-lisp-mode-hook 'company-mode)
 (add-hook 'emacs-lisp-mode-hook 'elisp-slime-nav-mode)
+(add-hook 'emacs-lisp-mode-hook 'init-emacs-lisp-mode)
 
 ;; Shortcuts to easily open declarations of various elisp objects
 ;;
@@ -129,8 +134,8 @@
 ;;; Org-mode settings
 ;;;
 
-(require 'ox-reveal)
-(setq org-reveal-root "file:///c:/Dev/Tools/revealjs")
+;;(require 'ox-reveal)
+;;(setq org-reveal-root "file:///c:/Dev/Tools/revealjs")
 
 ;; The following lines are used to auto-refresh generated images in an org file
 (defun shk-fix-inline-images ()
@@ -157,7 +162,8 @@
    (sh . t)
    (clojure . t)
    (plantuml . t)
-   (dot . t)))
+   (dot . t)
+   (R . t)))
 
 
 
@@ -183,6 +189,9 @@
 (setq plantuml-jar-path "c:/Dev/Tools/PlantUML/plantuml.jar")
 
 (require 'use-package)
+
+(use-package ess
+  :ensure t)
 
 (use-package magit
   :ensure t

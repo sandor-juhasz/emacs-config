@@ -3,11 +3,13 @@
 #
 
 auto-save-list/
-server/
 elpa/
+eshell/
+server/
 lisp/org
 \#*
 .#*
 *~
 projectile.cache
 projectile-bookmarks.eld
+ido.last
