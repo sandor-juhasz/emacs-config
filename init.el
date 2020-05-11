@@ -159,7 +159,7 @@
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((emacs-lisp . t)
-   (sh . t)
+   (shell . t)
    (clojure . t)
    (plantuml . t)
    (dot . t)
